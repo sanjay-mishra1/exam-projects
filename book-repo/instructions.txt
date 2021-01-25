@@ -1,0 +1,58 @@
+---------------------------------------------Book-Repo--------------------------------------------------------
+FrontEnd-React
+	library
+	Material-UI
+	Material-UI-Icons
+	Redux
+	for complete list please check this url 
+
+
+	run create-react-app <app-name> and the paste all files of react-code inside the created folder.
+
+Backend-Nodejs
+	node.js
+	express.js
+	
+	first install firebase function and nodejs and paste all the files of api into the created folder.
+
+Database-
+	google cloud firestore (NOSQL Database)
+API :
+	Using google cloud functions for serverless api handling.
+	
+	for deploying api: run firebase function deploy
+
+Hosting: Hosted in firebase hosting 
+
+---------------------------------------------------------------------------------------------------------------------------------------	
+A working example will be available at this url 
+	https://bookrepo.web.app/
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+For better code management please use this public github page where this project is uploaded
+	https://github.com/sanjay-mishra1/exam-projects/tree/main/book-repo
+	
+	folders:
+		react-app complete react code,
+		
+		react-app-build: the final build code to be deploy on the server
+		
+
+		api:the cloud function code in nodejs and express to be deployed on google cloud functions
+		
+		
+
+	All the images are included with the zip as well as in the github page
+		
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+for my latest projects you can check it on my 
+https://github.com/sanjay-mishra1
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
