@@ -1,4 +1,4 @@
 {
-  "environment": "debug",
+  "environment": "production",
   "project": "Book-Repo"
 }
