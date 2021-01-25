@@ -176,6 +176,7 @@ function UseTab(props) {
     loadFilterSearch();
   };
   const loadFilterSearch = () => {
+    props.handleDrawerToggle();
     store.dispatch(
       getSearchResult(
         props.data.searchKey,
