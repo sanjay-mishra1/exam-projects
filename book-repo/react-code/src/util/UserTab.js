@@ -107,11 +107,41 @@ const useStyles = makeStyles((theme) => ({
 
 function UseTab(props) {
   const classes = useStyles();
-
+  let dataFilter = props.data.filter;
   const theme = useTheme();
-  const [value, setValue] = React.useState("none");
-  const [ratingValue, setRatingValue] = React.useState("none");
-  const [menuLanguage, setMenuLanguage] = React.useState("All");
+  const getOrderInitialValue = () => {
+    if (dataFilter.includes("alphabetical")) return "alphabetical";
+    else if (dataFilter.includes("ratings_count")) return "ratings_count";
+    else if (dataFilter.includes("price-high")) return "price-high";
+    else if (dataFilter.includes("price-low")) return "price-low";
+    else return "none";
+  };
+  const getInitialRatingsValue = () => {
+    if (dataFilter.includes("average_rating-5-5")) return "average_rating-5-5";
+    else if (dataFilter.includes("average_rating-4-5"))
+      return "average_rating-4-5";
+    else if (dataFilter.includes("average_rating-3-5"))
+      return "average_rating-3-5";
+    else if (dataFilter.includes("average_rating-2-5"))
+      return "average_rating-2-5";
+    else if (dataFilter.includes("average_rating-1-5"))
+      return "average_rating-1-5";
+    else return "none";
+  };
+  const getInitialMenuLanguage = () => {
+    var lan = "all";
+    dataFilter.forEach((item) => {
+      if (item.includes("language_code")) lan = item;
+    });
+    return lan.split("-")[1];
+  };
+  const [value, setValue] = React.useState(getOrderInitialValue());
+  const [ratingValue, setRatingValue] = React.useState(
+    getInitialRatingsValue()
+  );
+  const [menuLanguage, setMenuLanguage] = React.useState(
+    getInitialMenuLanguage()
+  );
   const handleOrderChange = (event) => {
     store.dispatch({
       type: SET_FILTER,
@@ -189,7 +219,6 @@ function UseTab(props) {
       </Typography>
       <RadioGroup
         style={{ padding: 9 }}
-        name="alphabetical"
         onChange={handleOrderChange}
         value={value}
       >
@@ -302,7 +331,6 @@ function UseTab(props) {
       />
     </div>
   );
-
   return (
     <Fragment>
       <CssBaseline />
